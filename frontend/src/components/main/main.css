@@ -1,0 +1,77 @@
+.th{
+    min-height: 79vh;
+}
+.t1{
+    /* border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px #888888; */
+
+  margin: auto;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px 10px #888888;
+  /* background-color: rgba(240, 67, 24, 0.568); */
+  background-color: rgba(4, 104, 255, 0.288);
+  
+  width: 65vw;
+}
+.ico{
+    
+    height: 12vh;
+}
+.pr{
+    display: inline;
+}
+.st{
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+}
+.bl{
+    font-weight: 900;
+}
+.rat{
+    font-weight: 900;
+    color: rgb(56, 141, 6);
+}
+.clgimg{
+    height: 60%;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.loader{
+    position:absolute;   
+}
+
+
+.bd{
+    box-shadow: 5px 7px 7px 7px #888888;
+}
+@media screen and (max-width: 650px){
+    
+    .pi{
+          margin-top:40px;
+      
+    }
+    .t1{
+        width: 90vw;
+    }
+    
+  }
+
+  @media screen and (min-width: 768px){
+    
+    .bl{
+        font-size: 30px;
+        font-weight: 900;
+    }
+    .med{
+        font-size: 25px;
+    }
+    .t1{
+        width: 90vw;
+    }
+    .pi,.pr{
+        font-size: 45px;
+        font-weight: 900;
+    }
+  }
