@@ -3,6 +3,7 @@ const cheerio=require("cheerio")
 const express=require("express");
 const app=express();
 const path =require('path');
+require("dotenv").config();
 const port = process.env.PORT || 3001;
 const cors=require("cors");
 console.log(path.join(__dirname,"./frontend/build","index.html"))
