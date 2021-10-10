@@ -6,7 +6,7 @@ const path =require('path');
 require("dotenv").config();
 const port = process.env.PORT || 3001;
 const cors=require("cors");
-console.log(path.join(__dirname,"./frontend/build","index.html"))
+console.log(path.join("./build","index.html"))
 // app.use(express.static(path.join(__dirname,"./frontend/build")))
 app.use(cors()); 
 app.use(express.json());
@@ -252,9 +252,10 @@ app.get("/extras",async(req,res)=>{
     res.send(b);
   }
 });
-app.use(express.static(path.join(__dirname,"./frontend/build")))
+app.use(express.static(path.join(__dirname,"./build")))
 app.get("*",(req,res)=>{
-  res.sendFile(path.join(__dirname,"./frontend/build","index.html"))
+  console.log("its been hit")
+  res.sendFile(path.join(__dirname,"./build","index.html"))
 });
 
 app.listen(port,()=>{
