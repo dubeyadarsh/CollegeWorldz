@@ -5,8 +5,8 @@ const app=express();
 const path =require('path');
 const port = process.env.PORT || 3001;
 const cors=require("cors");
-console.log(__dirname)
-// app.use(express.static(path.join(__dirname,"build")))
+console.log(path.join(__dirname,"./frontend/build","index.html"))
+// app.use(express.static(path.join(__dirname,"./frontend/build")))
 app.use(cors()); 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -91,7 +91,7 @@ let i=0;
 
 
 });
-app.get("/main",async(req,res)=>{
+app.get("/imp",async(req,res)=>{
     const location=req.query.location;
     console.log("Location is :",location)
   
@@ -251,11 +251,11 @@ app.get("/extras",async(req,res)=>{
     res.send(b);
   }
 });
+app.use(express.static(path.join(__dirname,"./frontend/build")))
+app.get("*",(req,res)=>{
+  res.sendFile(path.join(__dirname,"./frontend/build","index.html"))
+});
 
-// app.get("*",(req,res)=>{
-//   res.sendFile(path.join(__dirname,"build","index.html"))
-// });
-
-app.listen(3001,()=>{
+app.listen(port,()=>{
         console.log("Server running at port 3001");
 });
