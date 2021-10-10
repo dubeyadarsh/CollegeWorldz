@@ -252,10 +252,11 @@ app.get("/extras",async(req,res)=>{
     res.send(b);
   }
 });
-app.use(express.static(path.join(__dirname,"./build")))
+app.use(express.static(path.join(__dirname,"build")))
 app.get("*",(req,res)=>{
   console.log("its been hit")
-  res.sendFile(path.join(__dirname,"./build","index.html"))
+  res.sendFile(path.join(__dirname,"build","index.html"))
+  
 });
 
 app.listen(port,()=>{
